@@ -475,7 +475,7 @@ function update_line(selected_countries, scales){
 
 	legend.append('rect')
 	.attr('x', 0)
-	.attr('y', 50)
+	.attr('y', 20)
 	.attr('width', 15)
 	.attr('height', 6)
 	.style('fill', function(d){return line_color(d)})
@@ -483,7 +483,7 @@ function update_line(selected_countries, scales){
 	legend.append('text')
 	.attrs({
 		'x': 18,
-		'y': 50,
+		'y': 20,
 		'dy': '.4em'
 	})
 	.text(function(d){return d})
