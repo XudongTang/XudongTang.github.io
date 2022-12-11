@@ -1,4 +1,4 @@
-let width = 700;
+let width = 900;
 let height = 350;
 let margins = {top: 20, bottom: 20, left: 20, right: 20}
 
