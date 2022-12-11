@@ -475,7 +475,7 @@ function update_line(selected_countries, scales){
 
 	legend.append('rect')
 	.attr('x', 0)
-	.attr('y', 20)
+	.attr('y', 10)
 	.attr('width', 15)
 	.attr('height', 6)
 	.style('fill', function(d){return line_color(d)})
@@ -483,10 +483,12 @@ function update_line(selected_countries, scales){
 	legend.append('text')
 	.attrs({
 		'x': 18,
-		'y': 20,
+		'y': 10,
 		'dy': '.4em'
 	})
 	.text(function(d){return d})
+	.on("mouseover", (_, d) => mouseover_legend(d))
+	.on("mouseout", (_, d) => mouseout(d))
 
 }
 
@@ -845,6 +847,66 @@ function mouseover_heatmap(d) {
 	d3.select("#name")
 		.select("text")
 		.text(d.Name)
+}
+
+function mouseover_legend(d) {
+	var region_un = d3.select('#select_cont').property('value');
+	var subregion = d3.select('#select_sub_cont').property('value')
+	d3.select(".plot")
+		.selectAll("#legend")
+		.selectAll("text")
+		.transition().duration(200)
+		.attrs({
+			"fill": e => e === d ? "red":"black",
+			"font-weight": e => e === d ? 900:100
+		})
+	d3.select(".plot")
+		.selectAll("#legend")
+		.selectAll("rect")
+		.transition().duration(200)
+		.attrs({
+			"height": e => e === d ? 12:6
+		})
+
+	d3.select("#series")
+		.selectAll("path")
+		.transition().duration(200)
+		.attrs({
+			"stroke-width": e => e.Name === d ? 12:5
+		});
+
+	if (region_un === "All") {
+		d3.select("#map")
+		.selectAll("path")
+		.transition().duration(200)
+		.attrs({
+			"stroke-width": e => e.properties.region_un === d ? 2:1,
+			"stroke-opacity":  e => e.properties.region_un === d ? 1:0.3,
+			"fill-opacity": e => e.properties.region_un === d ? 1:0.7
+		});
+	} else if (subregion === "All") {
+		d3.select("#map")
+		.selectAll("path")
+		.transition().duration(200)
+		.attrs({
+			"stroke-width": e => e.properties.subregion === d ? 2:1,
+			"stroke-opacity":  e => e.properties.subregion === d ? 1:0.3,
+			"fill-opacity": e => e.properties.subregion === d ? 1:0.7
+		});
+	} else {
+		d3.select("#map")
+		.selectAll("path")
+		.transition().duration(200)
+		.attrs({
+			"stroke-width": e => e.properties.statistics[0].Country === d ? 2:1,
+			"stroke-opacity":  e => e.properties.statistics[0].Country === d ? 1:0.3,
+			"fill-opacity": e => e.properties.statistics[0].Country === d ? 1:0.7
+		});
+	}
+
+	d3.select("#name")
+		.select("text")
+		.text(d)
 }
 
 function mouseout(d) {
