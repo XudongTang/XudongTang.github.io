@@ -397,7 +397,7 @@ function update_line(selected_countries, scales){
 			}).enter()
 			.append("circle")
 			.attrs({
-				"r": 7,
+				"r": 5,
 				"cx": function(d, i) {
 					return scales.x(d.year);
 				},
@@ -418,7 +418,7 @@ function update_line(selected_countries, scales){
 				enter => enter.append("circle")
 					.transition().duration(500)
 					.attrs({
-						"r": 7,
+						"r": 5,
 						"cx": function(d, i) {
 							return scales.x(d.year);
 						},
