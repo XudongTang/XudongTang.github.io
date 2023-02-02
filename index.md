@@ -32,7 +32,8 @@ In this scenario, a docker container would be your best hope. As long as the ser
 Now suppose you are very good at working out dependencies even in a remote environment. When you finally publish your project on your GitHub site, you would want others to use your production on different datasets so that your work could be further validated. Here comes another issue: your target users might come from fields that do not dive deeply into the software system, and the dependencies would be huge obstacles for users to even set up the software. Imagine someone who has yet to learn about compiler encounters the error messages shown above, this would certainly not be a good advertisement for your hard work. In this case, a Docker container that contains everything related to your project would come in handy for your users even if they do not have much experience with computer systems, as running a Docker container is not any harder than running an IDE that most researchers have experience in.
 
 In this tutorial, we will divide the document into the following sections:
-| Page| Description|
+
+|Page|Description|
 |---|---|
 |[Introduction](intro.md)|A short introduction on the concept of Docker containers|
 |[Setup](setup.md)|A step-by-step guide on getting everything you need for creating Docker containers|
