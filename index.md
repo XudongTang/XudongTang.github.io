@@ -1,7 +1,7 @@
 # Introduction to Docker
 
 ## Motivation
-Imaging you are working on a research project. To have your code running, you need several fancy packages from various sources. You might also need software distributions that require you to compile them yourselves. After hours of setting up, you finally got everything working on your computer.
+[test file](test.md)Imaging you are working on a research project. To have your code running, you need several fancy packages from various sources. You might also need software distributions that require you to compile them yourselves. After hours of setting up, you finally got everything working on your computer.
 Sometimes it is not feasible to run everything on your local computer. Maybe you have 5,000 models based on different dataset to run, and it would take months to get all jobs finished on your local device. In this case, you might want to run your code in a remote environment, an environment that could handle large number of jobs, such as in [CHTC].
 Now, remote servers are quite different from local environments. Under most circumstances, servers are based on a Linux OS, not the Windows or MacOS that we are familiar with. You probably do not have administrator permission as well, so you need to follow the instructions the server maintenance team provides you. Those instructions are quite different for different servers.
 After you spent hours setting everything up and get the jobs runnning, thinking that hours of hard work finally paid off, the job got terminated, and something like this appears in the error message:
