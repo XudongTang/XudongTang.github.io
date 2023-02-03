@@ -25,6 +25,7 @@ You might get this error message:
 ```
 Hardware assisted virtualization and data execution protection must be enabled in the BIOS.
 ```
+
 To solve this, restart your device and enter the BIOS. The way to enter BIOS varies for different devices, common methods are pressing F12 or F10 repeatedly once powering on your computer. Once entering the BIOS, find "Hardware assisted virtualization" and enable it. You might not find the exact option. The option with "hardware" and "virtual" is usually the one you want to enable.
 
 After this, you will most likely run into another error message:
@@ -34,11 +35,13 @@ The WSL 2 Linux kernel is now installed using a separate MSI update package. Ple
 https://aka.ms/wsl2kernel
 Press restart after installing the Linux kernel
 ```
+
 WSL stands for Windows Subsystem for Linux. Since you need to work on your docker via command, you need a Linux environment, so having WSL is essential for windows users. Click the link in that error message and follow the instructions on that page to install WSL 2. You should not run into any issues while doing that.
 
 Now that you have everything needed to work with Docker, let's get a simple Docker image to demonstrate its usage.
 
 [Next Section](image.md)
+
 [Homepage](index.md)
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)

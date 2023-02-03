@@ -33,7 +33,7 @@ Now suppose you are very good at working out dependencies even in a remote envir
 
 In this tutorial, we will divide the document into the following sections:
 
-|Page|Description|
+| Page| Description|
 |---|---|
 |[Introduction](intro.md)|A short introduction on the concept of Docker containers|
 |[Setup](setup.md)|A step-by-step guide on getting everything you need for creating Docker containers|
@@ -42,7 +42,7 @@ In this tutorial, we will divide the document into the following sections:
 |[Build the image](build.md)|A guide on building and testing your image based on Dockerfile|
 |[Usage](use.md)|Examples of using the Docker container under different environments|
 
-
+[Next Section](intro.md)
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
    [CHTC]: <https://chtc.cs.wisc.edu/>

@@ -1,7 +1,7 @@
 
 # Getting your first image
 
-Now you finish all the setting up steps, it's time to get an actual image that you could play around with. All docker images have the following format: username/iamge:tag. "Username" is the DockerHub user that you want to pull from, "image" is the name of the image in the user's repository, and "tag" is similar to the version of the image. Let's experiment with a Ubuntu image that everyone likes. Open your terminal (for Windows users, it's the WSL terminal you just installed, not the CMD prompt), and type
+Now you finish all the setting up steps, it's time to get an actual image that you could play around with. All docker images have the following format: `username/iamge:tag`. `Username` is the DockerHub user that you want to pull from, `image` is the name of the image in the user's repository, and `tag` is similar to the version of the image. Let's experiment with a Ubuntu image that everyone likes. Open your terminal (for Windows users, it's the WSL terminal you just installed, not the CMD prompt), and type
 ```sh
 docker pull ubuntu:22.04
 ```
@@ -25,16 +25,16 @@ docker run -it --rm=true ubuntu:22.04 /bin/bash
 ```
 
 The meaning of the flags are as follows:
-- -it : interactive
-- --rm=true : clean up the runnining container after exit.
-- /bin/bash : start a bash(command prompt) when running the container
+- `-it` : interactive
+- `--rm=true` : clean up the runnining container after exit.
+- `/bin/bash` : start a bash(command prompt) when running the container
 
 Now you should see a prompt like this:
 ```sh
 root@3569d1bd2785:/#
 ```
 
-You are now in a container that has the base Ubuntu 22.04! The characters after the @ is the container ID. You should be able to do anything that you can do in an actual Ubuntu system. Try
+You are now in a container that has the base Ubuntu 22.04! The characters after the `@` is the container ID. You should be able to do anything that you can do in an actual Ubuntu system. Try
 ```sh
 root@3569d1bd2785:/# apt-get update
 ```
@@ -44,7 +44,7 @@ this should update all packages in this container. Try
 root@3569d1bd2785:/# apt-get install wget
 ```
 
-This will install wget command in this container. Now, keep in mind that everything you just did happens ONLY in this container. You are not installing wget on your local system! After you exit the container, these should be all gone! Let's try:
+This will install `wget` command in this container. Now, keep in mind that everything you just did happens ONLY in this container. You are not installing wget on your local system! After you exit the container, these should be all gone! Let's try:
 ```sh
 root@3569d1bd2785:/# exit
 ```
@@ -66,9 +66,10 @@ bash: wget: command not found
 
 even though you installed it in the previous container.
 
-Now you should have a sense of what a container or the image that builds it looks like. But we don't want another Ubuntu container, we want a unique container that runs our codes and files! To build your own image and container, you should create a Dockerfile.
+Now you should have a sense of what a container or the image that builds it looks like. But we don't want another Ubuntu container, we want a unique container that runs our codes and files! To build your own image and container, you should create a `Dockerfile`.
 
 [Next Section](dockerfile.md)
+
 [Homepage](index.md)
 
 

@@ -87,6 +87,7 @@ Here "-y" give "yes" to all prompt during the installation. Some system have tho
 Now you would have a rough sense how to write a Dockerfile. It's time to turn your Dockerfile into an actual image.
 
 [Next Section](build.md)
+
 [Homepage](index.md)
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)

@@ -7,6 +7,7 @@ A Docker container is a standard unit of software that packages up code and all 
 As you might see, the Docker container aims to solve the kind of issue raised in the previous part. Despite being very powerful, creating a Docker container is fairly easy. In the next few sections, I will show you step-by-step how to create your own container.
 
 [Next Section](setup.md)
+
 [Homepage](index.md)
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)

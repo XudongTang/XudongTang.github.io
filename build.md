@@ -60,6 +60,7 @@ the `your-username/your-image-name:tag` should be the same as the one you specif
 At this stage, you are ready to use the actual docker container on your local machine or a remote machine.
 
 [Next Section](use.md)
+
 [Homepage](index.md)
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
