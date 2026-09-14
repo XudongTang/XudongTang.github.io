@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Xudong Tang</title>
-  <meta name="description" content="Personal website of Xudong Tang. Projects, experience, writing, and contact details.">
+  <meta name="description" content="Xudong Tang is a PhD student in Computer Science at Northwestern University who studies how people and machines perceive voice similarity.">
   <meta name="author" content="Xudong Tang">
   <meta property="og:title" content="Xudong Tang">
-  <meta property="og:description" content="Personal website of Xudong Tang. Projects, experience, writing, and contact details.">
+  <meta property="og:description" content="PhD student in Computer Science at Northwestern University. Human and machine perception of voice similarity, deep learning, and Bayesian methods.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://xudongtang.github.io/">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f7f6">
@@ -30,7 +30,7 @@
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
-        <a href="#writing">Writing</a>
+        <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
       </nav>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
@@ -45,20 +45,19 @@
     <!-- ============ Intro ============ -->
     <section class="hero" id="top">
       <div class="hero-text">
-        <!-- EDIT: your current role and organization. -->
-        <p class="eyebrow">[Your role], [Organization]</p>
+        <p class="eyebrow">PhD student in Computer Science, Northwestern University</p>
         <h1>Xudong Tang</h1>
-        <!-- EDIT: two or three sentences about what you do. -->
         <p class="lead">
-          I'm a [your role] working on [your focus]. I like turning data into clear
-          visuals and tools that people use. This site collects my projects,
-          experience, and writing.
+          I'm a PhD student in Computer Science at Northwestern University, where I
+          work with Matthew Groh in the Human-AI Collaboration Lab. I study how
+          people and machines judge whether two voices sound alike, and what that
+          means in an age of voice cloning.
         </p>
         <ul class="link-row">
           <li><a href="mailto:xudongtang75@gmail.com">Email</a></li>
           <li><a href="https://github.com/XudongTang">GitHub</a></li>
-          <!-- EDIT: replace with your LinkedIn address. -->
-          <li><a href="https://www.linkedin.com/in/your-handle">LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/in/xudongtang75/">LinkedIn</a></li>
+          <li><a href="https://scholar.google.com/citations?user=UKjzKs0AAAAJ">Google Scholar</a></li>
           <!-- EDIT: add your CV as assets/cv.pdf, or delete this link. -->
           <li><a href="assets/cv.pdf">CV (PDF)</a></li>
         </ul>
@@ -72,17 +71,40 @@
       <h2 class="section-label">About</h2>
       <div class="section-body prose">
         <p>
-          Hi, I'm Xudong. [Write two or three sentences about your background
-          here, e.g. where you studied, what you work on now, and what kind of
-          problems you care about.]
+          I'm a PhD student in Computer Science at Northwestern University, advised
+          by Matthew Groh in the Human-AI Collaboration Lab. I'm also affiliated
+          with the Northwestern Institute on Complex Systems (NICO) and the Ryan
+          Institute on Complexity.
         </p>
         <p>
-          Outside of work, [add a sentence about what you enjoy doing].
+          My current project asks whether a computational approach can evaluate
+          voice similarity well enough to match, or even exceed, the "reasonable
+          person" standard. That means designing the whole experimental workflow,
+          from a behavioral study of how people perceive voice identity, to
+          controlled speech samples produced with an adapted voice generation
+          model, to a contrastive classifier that models how machines perceive
+          voice identity.
+        </p>
+        <p>
+          Before Northwestern, I completed a master's degree in data science at
+          the University of Wisconsin-Madison, where I worked with Claudia
+          Solís-Lemus on neural networks for phylogenetic inference and on
+          Bayesian deep learning for soil microbiome data.
+        </p>
+        <!-- This line is quoted from your LinkedIn summary as search engines index it. Check the wording. -->
+        <p>
+          In short, I research things machines struggle to define, humans barely
+          agree on, and funding agencies find suspiciously unprofitable.
+        </p>
+        <!-- EDIT: something personal, or delete this paragraph. -->
+        <p>
+          Outside of research, [add a sentence about what you enjoy doing].
         </p>
         <dl class="facts">
-          <div><dt>Currently</dt><dd>[Role], [Organization]</dd></div>
-          <div><dt>Based in</dt><dd>[City, Country]</dd></div>
-          <div><dt>Interests</dt><dd>Data visualization, statistics, [add your own]</dd></div>
+          <div><dt>Currently</dt><dd>PhD student, Computer Science, Northwestern University</dd></div>
+          <!-- EDIT: inferred from Northwestern's campus. Change if you live elsewhere. -->
+          <div><dt>Based in</dt><dd>Evanston, Illinois</dd></div>
+          <div><dt>Interests</dt><dd>Human and machine perception, deep learning, Bayesian deep learning, graph representation learning</dd></div>
         </dl>
       </div>
     </section>
@@ -93,17 +115,39 @@
       <div class="section-body">
         <ul class="project-list">
 
-          <!-- This one is real: it is the previous version of this site, kept in archive/. -->
           <li class="project project--featured">
             <div class="project-head">
+              <h3>Human and machine perception of voice similarity</h3>
+              <span class="badge">Current</span>
+            </div>
+            <p>
+              Can a computational approach evaluate voice similarity well enough to
+              match the "reasonable person" standard? I designed the full
+              experimental workflow: a behavioral study of how people perceive
+              voice identity, controlled speech samples from an adapted
+              state-of-the-art voice generation model, and a contrastive
+              classifier that models machine perception of voice identity.
+            </p>
+            <ul class="tags">
+              <li>Voice identity</li>
+              <li>Human perception</li>
+              <li>Contrastive learning</li>
+            </ul>
+            <p class="project-links">
+              <a href="https://www.nico.northwestern.edu/news-events/data-science-nights.html">Talk at NICO Data Science Nights, May 2026</a>
+            </p>
+          </li>
+
+          <li class="project">
+            <div class="project-head">
               <h3><a href="archive/">World life expectancy explorer</a></h3>
-              <span class="badge">Featured</span>
             </div>
             <p>
               An interactive world map of life expectancy, adult mortality, infant
               deaths, and birth rate for 232 countries from 2000 to 2015. Step
               through the years, filter by continent and sub-region, and compare
-              countries with a line chart or a heatmap.
+              countries with a line chart or a heatmap. This was the previous
+              version of this site.
             </p>
             <ul class="tags">
               <li>D3.js</li>
@@ -116,41 +160,65 @@
             </p>
           </li>
 
-          <!-- EDIT: copy this block for each project. -->
           <li class="project">
             <div class="project-head">
-              <h3><a href="#">[Project name]</a></h3>
+              <h3><a href="https://academic.oup.com/bioinformaticsadvances/article/4/1/vbae022/7610879">Symmetry-preserving neural networks for phylogenetic inference</a></h3>
             </div>
             <p>
-              [One or two sentences on what the project does, who it is for, and
-              what you built it with.]
+              A neural network that infers phylogenetic trees from sequence data
+              and builds the symmetries of the tree into its architecture. It
+              outperformed standard phylogenetic methods and earlier neural
+              networks under long branch attraction, and it uses less memory.
+              Published in Bioinformatics Advances.
             </p>
             <ul class="tags">
+              <li>Deep learning</li>
+              <li>Phylogenetics</li>
               <li>Python</li>
-              <li>pandas</li>
-              <li>[Tool]</li>
             </ul>
             <p class="project-links">
-              <a href="#">Code</a>
-              <a href="#">Demo</a>
+              <a href="https://academic.oup.com/bioinformaticsadvances/article/4/1/vbae022/7610879">Paper</a>
+              <a href="https://arxiv.org/abs/2201.04663">Preprint</a>
+              <a href="https://github.com/crsl4/nn-phylogenetics">Code</a>
             </p>
           </li>
 
           <li class="project">
             <div class="project-head">
-              <h3><a href="#">[Project name]</a></h3>
+              <h3><a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05977-2">Predicting potato yield and disease from the soil microbiome</a></h3>
             </div>
             <p>
-              [One or two sentences on what the project does, who it is for, and
-              what you built it with.]
+              Random forest and Bayesian neural network models that predict potato
+              yield and disease from soil microbiome data together with chemical
+              and physical soil properties. The study shows how much the
+              preprocessing choices people make change predictive performance.
+              Published in BMC Bioinformatics.
             </p>
             <ul class="tags">
-              <li>R</li>
-              <li>Shiny</li>
-              <li>[Tool]</li>
+              <li>Bayesian deep learning</li>
+              <li>Random forests</li>
+              <li>Microbiome</li>
             </ul>
             <p class="project-links">
-              <a href="#">Code</a>
+              <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05977-2">Paper</a>
+              <a href="https://github.com/solislemuslab/soil-microbiome-nn">Code</a>
+            </p>
+          </li>
+
+          <li class="project">
+            <div class="project-head">
+              <h3><a href="https://github.com/XudongTang/phylo_graph_generative_model">Graph generative model for phylogenetic inference</a></h3>
+            </div>
+            <p>
+              An in-progress graph generative model for phylogenetic trees, from my
+              master's research on generative models over tree structures.
+            </p>
+            <ul class="tags">
+              <li>Graph generative models</li>
+              <li>Python</li>
+            </ul>
+            <p class="project-links">
+              <a href="https://github.com/XudongTang/phylo_graph_generative_model">Code</a>
             </p>
           </li>
 
@@ -163,19 +231,23 @@
       <h2 class="section-label">Experience</h2>
       <div class="section-body">
         <ol class="timeline">
-          <!-- EDIT: one <li> per position, most recent first. -->
           <li>
             <span class="when">2024 to now</span>
             <div>
-              <h3>[Role]</h3>
-              <p class="org">[Organization], [City]</p>
-              <p>[What you worked on and what came of it, in one or two sentences.]</p>
+              <h3>PhD student in Computer Science</h3>
+              <p class="org">Northwestern University, Evanston, Illinois</p>
+              <p>
+                Human-AI Collaboration Lab, advised by Matthew Groh. Research on
+                human and machine perception of voice identity, with affiliations
+                at NICO and the Ryan Institute on Complexity.
+              </p>
             </div>
           </li>
+          <!-- EDIT: add internships, teaching, or other jobs here, most recent first. Delete this block if there are none. -->
           <li>
-            <span class="when">2022 to 2024</span>
+            <span class="when">[Dates]</span>
             <div>
-              <h3>[Role]</h3>
+              <h3>[Role, e.g. research assistant, intern, or teaching assistant]</h3>
               <p class="org">[Organization], [City]</p>
               <p>[What you worked on and what came of it, in one or two sentences.]</p>
             </div>
@@ -185,9 +257,23 @@
         <h3 class="subheading">Education</h3>
         <ol class="timeline">
           <li>
-            <span class="when">2018 to 2022</span>
+            <span class="when">2022</span>
             <div>
-              <h3>[Degree] in [Field]</h3>
+              <!-- EDIT: the Solís-Lemus lab page lists this as "MSDS". Adjust the exact degree name if needed. -->
+              <h3>M.S. in Data Science</h3>
+              <p class="org">University of Wisconsin-Madison</p>
+              <p>
+                Research with Claudia Solís-Lemus on neural networks for
+                phylogenetic inference and graph generative models on tree
+                structures.
+              </p>
+            </div>
+          </li>
+          <!-- EDIT: your undergraduate degree. Your GitHub course repositories suggest UW-Madison around 2018 to 2021. -->
+          <li>
+            <span class="when">[Year]</span>
+            <div>
+              <h3>[B.S. in Field]</h3>
               <p class="org">[University]</p>
             </div>
           </li>
@@ -195,16 +281,58 @@
       </div>
     </section>
 
-    <!-- ============ Writing ============ -->
-    <section class="section" id="writing">
-      <h2 class="section-label">Writing</h2>
+    <!-- ============ Publications ============ -->
+    <section class="section" id="publications">
+      <h2 class="section-label">Publications</h2>
       <div class="section-body">
-        <ul class="post-list">
-          <!-- EDIT: blog posts, papers, or talks. Delete this section if you do not need it. -->
-          <li><a href="#">[Title of a blog post, paper, or talk]</a><time datetime="2026-06">June 2026</time></li>
-          <li><a href="#">[Title of a blog post, paper, or talk]</a><time datetime="2025-11">November 2025</time></li>
-          <li><a href="#">[Title of a blog post, paper, or talk]</a><time datetime="2025-03">March 2025</time></li>
-        </ul>
+        <ol class="pub-list">
+          <li>
+            <h3 class="pub-title"><a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05977-2">Human limits in machine learning: prediction of potato yield and disease using soil microbiome data</a></h3>
+            <p class="pub-authors">Rosa Aghdam, <strong>Xudong Tang</strong>, Shan Shan, Richard Lankau, Claudia Solís-Lemus</p>
+            <p class="pub-venue">BMC Bioinformatics 25, 366 (2024)</p>
+            <p class="pub-links">
+              <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05977-2">Paper</a>
+              <a href="https://github.com/solislemuslab/soil-microbiome-nn">Code</a>
+            </p>
+          </li>
+          <li>
+            <h3 class="pub-title"><a href="https://academic.oup.com/bioinformaticsadvances/article/4/1/vbae022/7610879">Novel symmetry-preserving neural network model for phylogenetic inference</a></h3>
+            <p class="pub-authors"><strong>Xudong Tang</strong>, Leonardo Zepeda-Núñez, Shengwen Yang, Zelin Zhao, Claudia Solís-Lemus</p>
+            <p class="pub-venue">Bioinformatics Advances 4(1), vbae022 (2024)</p>
+            <p class="pub-links">
+              <a href="https://academic.oup.com/bioinformaticsadvances/article/4/1/vbae022/7610879">Paper</a>
+              <a href="https://arxiv.org/abs/2201.04663">arXiv</a>
+              <a href="https://github.com/crsl4/nn-phylogenetics">Code</a>
+            </p>
+          </li>
+        </ol>
+
+        <!-- These two are listed as drafts on Matthew Groh's public CV. Delete this block if you would rather not list unpublished work. -->
+        <h3 class="subheading">In preparation</h3>
+        <ol class="pub-list">
+          <li>
+            <h3 class="pub-title">Mapping human and machine perception of voice similarity</h3>
+            <p class="pub-authors"><strong>Xudong Tang</strong>, Matthew Groh</p>
+            <p class="pub-venue">Manuscript in preparation (2026)</p>
+          </li>
+          <li>
+            <h3 class="pub-title">VIPBench: a human-aligned benchmark for voice identity perception in the age of voice cloning</h3>
+            <p class="pub-authors"><strong>Xudong Tang</strong>, Matthew Groh</p>
+            <p class="pub-venue">Manuscript in preparation (2026)</p>
+          </li>
+        </ol>
+
+        <h3 class="subheading">Talks</h3>
+        <ol class="pub-list">
+          <li>
+            <h3 class="pub-title">Human and Machine Perception of Voice Similarity</h3>
+            <p class="pub-authors">Data Science Nights, Northwestern Institute on Complex Systems</p>
+            <p class="pub-venue"><time datetime="2026-05-28">May 28, 2026</time></p>
+            <p class="pub-links">
+              <a href="https://www.nico.northwestern.edu/news-events/data-science-nights.html">Event page</a>
+            </p>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -215,8 +343,9 @@
         <p>The best way to reach me is email.</p>
         <p class="contact-email"><a href="mailto:xudongtang75@gmail.com">xudongtang75@gmail.com</a></p>
         <p>
-          You can also find me on <a href="https://github.com/XudongTang">GitHub</a>
-          and <a href="https://www.linkedin.com/in/your-handle">LinkedIn</a>.
+          You can also find me on <a href="https://github.com/XudongTang">GitHub</a>,
+          <a href="https://www.linkedin.com/in/xudongtang75/">LinkedIn</a>, and
+          <a href="https://scholar.google.com/citations?user=UKjzKs0AAAAJ">Google Scholar</a>.
         </p>
       </div>
     </section>

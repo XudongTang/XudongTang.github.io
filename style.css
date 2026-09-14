@@ -507,38 +507,54 @@ h1, h2, h3 {
   }
 }
 
-/* ---------- Writing ---------- */
-.post-list {
+/* ---------- Publications ---------- */
+.pub-list {
+  display: grid;
+  gap: 1.35rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.post-list li {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 0.8rem 0;
-  border-top: 1px solid var(--line);
+.pub-list li {
+  display: grid;
+  gap: 0.3rem;
 }
-.post-list li:first-child {
-  padding-top: 0;
-  border-top: 0;
+.pub-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
-.post-list a {
+.pub-title a {
   color: var(--ink);
-  font-weight: 500;
   text-decoration: none;
 }
-.post-list a:hover {
+.pub-title a:hover {
   color: var(--accent);
   text-decoration: underline;
 }
-.post-list time {
+.pub-authors {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.pub-authors strong {
+  font-weight: 500;
+  color: var(--ink);
+}
+.pub-venue {
+  margin: 0;
   font-family: var(--font-mono);
   font-size: 0.8125rem;
   color: var(--muted);
-  white-space: nowrap;
+}
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  margin: 0.15rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
 }
 
 /* ---------- Contact ---------- */

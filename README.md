@@ -23,11 +23,18 @@ the files in this repository as they are.
 
 ## Editing the site
 
-Open `index.html` and replace the text in square brackets, e.g. `[Your role]`.
-The sections are, in order, the intro, about, projects, experience, writing, and
-contact. To add a project, copy one of the `<li class="project">` blocks. To add
-a job, copy one of the `<li>` blocks inside the timeline. To remove a section,
-delete its `<section>` block and the matching link in the nav at the top.
+Open `index.html` and replace any text still in square brackets, e.g.
+`[Year]`. The sections are, in order, the intro, about, projects, experience,
+publications, and contact. To add a project, copy one of the
+`<li class="project">` blocks. To add a job, copy one of the `<li>` blocks inside
+the timeline. To add a paper, copy one of the `<li>` blocks inside a
+`pub-list`. To remove a section, delete its `<section>` block and the matching
+link in the nav at the top.
+
+The current text was filled in from public pages, mainly Google Scholar, the
+Northwestern CS department, the Human-AI Collaboration Lab, and the Solís-Lemus
+lab site. Comments in `index.html` mark the lines that were inferred rather
+than confirmed, so read through it once before publishing.
 
 To add your CV, save it as `assets/cv.pdf`. The intro already links to that
 path. If you do not want a CV link, delete the line with the `EDIT` comment
