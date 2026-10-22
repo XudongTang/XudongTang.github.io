@@ -23,7 +23,7 @@
   --font-serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 
-  --page-width: 52rem;                       /* label column + reading column */
+  --page-width: 56rem;                       /* fits the intro text and photo side by side */
   --reading-width: 40rem;                    /* about 65 characters of body text */
   --gutter: clamp(1.25rem, 4vw, 2rem);       /* side padding at every size */
   --label-col: 9.5rem;                       /* width of the section labels */
@@ -231,11 +231,15 @@ h1, h2, h3 {
 }
 
 /* ---------- Intro ---------- */
+/* The photo is always as tall as the intro text. The photo column width (20.5rem)
+   is set so the photo keeps its own shape next to the current text. If the text
+   gets longer or shorter, the edges of the photo are trimmed to fit, so change
+   that width if too much of the photo is cut off. */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 2rem;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) 20.5rem;
+  gap: 2.5rem;
+  align-items: stretch;
   padding-block: clamp(3rem, 8vw, 5.5rem) clamp(2.5rem, 6vw, 4rem);
 }
 
@@ -275,24 +279,41 @@ h1, h2, h3 {
   font-size: 0.9rem;
 }
 
-.portrait {
-  width: 7.5rem;
-  height: 7.5rem;
-  border-radius: var(--radius);
+.portrait-frame {
+  position: relative;
+  overflow: hidden;
   border: 1px solid var(--line);
+  border-radius: var(--radius);
   background: var(--surface);
-  object-fit: cover;
 }
 
-@media (max-width: 640px) {
+/* The photo fills the frame, which is stretched to the height of the text. */
+.portrait {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;  /* keeps the face in view if the top or bottom is trimmed */
+}
+
+/* On narrower screens the text column would get too narrow, so the photo goes above the text. */
+@media (max-width: 940px) {
   .hero {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+  .hero-text {
+    max-width: var(--reading-width);
+  }
+  .portrait-frame {
+    order: -1;
+    width: min(13rem, 65%);
   }
   .portrait {
-    order: -1;
-    width: 5.5rem;
-    height: 5.5rem;
+    position: static;
+    height: auto;
   }
 }
 
