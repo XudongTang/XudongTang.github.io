@@ -14,10 +14,6 @@ the files in this repository as they are.
   underline on the nav link for the section you are reading.
 - `404.html` is the page GitHub shows for an address that does not exist.
 - `assets/` holds the favicon and a placeholder portrait.
-- `archive/` is the previous version of this site, an interactive map of world
-  life expectancy data built with D3.js. It still works at
-  https://xudongtang.github.io/archive/ and the home page links to it as a
-  project.
 - `.nojekyll` tells GitHub Pages to serve the files directly instead of running
   them through Jekyll.
 

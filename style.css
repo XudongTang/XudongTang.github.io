@@ -101,6 +101,11 @@ a {
 a:hover {
   text-decoration-color: currentColor;
 }
+/* On very narrow screens a long email address breaks onto two lines,
+   instead of making the page scroll sideways. */
+a[href^="mailto:"] {
+  overflow-wrap: anywhere;
+}
 
 /* Mark links that leave the site. */
 main a[href^="http"]::after,
@@ -231,13 +236,13 @@ h1, h2, h3 {
 }
 
 /* ---------- Intro ---------- */
-/* The photo is always as tall as the intro text. The photo column width (20.5rem)
+/* The photo is always as tall as the intro text. The photo column width (21.7rem)
    is set so the photo keeps its own shape next to the current text. If the text
    gets longer or shorter, the edges of the photo are trimmed to fit, so change
    that width if too much of the photo is cut off. */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 20.5rem;
+  grid-template-columns: minmax(0, 1fr) 21.7rem;
   gap: 2.5rem;
   align-items: stretch;
   padding-block: clamp(3rem, 8vw, 5.5rem) clamp(2.5rem, 6vw, 4rem);
