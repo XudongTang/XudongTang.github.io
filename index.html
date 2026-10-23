@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap">
   <!-- Raise ?v= on the style.css and script.js links whenever either file changes,
        so browsers load the new file instead of an old saved copy. -->
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
   <!-- Applies a saved light/dark choice before the first paint so the page does not flash. -->
   <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t)}}catch(e){}</script>
 </head>
@@ -104,6 +104,27 @@
               </p>
             </div>
             <img class="project-thumb" src="assets/vipbench/p2_thumbnail.png" alt="Bar chart of the share of listener responses that went against the metadata label: 0.10 for the same recording, 0.31 for the same speaker in different recordings, 0.41 for the same speaker and a voice clone, 0.26 for different real speakers, and 0.27 for different speakers with a voice clone." width="960" height="824">
+          </li>
+
+          <!-- This project has no popup yet. Its title is plain text instead of a
+               button, so the row does not react to clicks or hovering. To add a
+               popup later, copy the button and a dialog from the rows above. -->
+          <li class="project-row">
+            <div class="project-text">
+              <h3>An interactive tool for LLM simulations</h3>
+              <p>
+                Using LLMs to simulate human behavior has drawn growing attention over
+                the past year, in both social science research and industry. LLM agents
+                could be a cheaper alternative to human participants at various stages
+                of experiments and surveys. However, LLM simulations are not always
+                properly evaluated or validated, which can introduce hidden biases that
+                are risky for social science research (<a href="https://arxiv.org/pdf/2602.15785">this paper</a>
+                is worth reading on the topic). We are building an interactive tool that helps social
+                scientists use LLM simulations in experiment and survey design, so they
+                can get the most out of them while keeping bias to a minimum.
+              </p>
+            </div>
+            <img class="project-thumb project-thumb--fill" src="assets/llm-simulations/p3_thumbnail.jpg" alt="Illustration of a person's silhouette linked to icons for marriage, money, education, and gender, next to a speech bubble, above a survey form on a clipboard." width="681" height="450">
           </li>
 
         </ul>
@@ -214,6 +235,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

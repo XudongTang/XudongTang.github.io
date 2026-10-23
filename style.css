@@ -413,6 +413,14 @@ h1, h2, h3 {
   padding: 0;
   list-style: none;
 }
+/* On wide screens every row is as tall as the tallest one. On narrower screens
+   the text wraps onto many more lines, so equal heights would leave large gaps
+   under the shorter text, and each row keeps its own height instead. */
+@media (min-width: 941px) {
+  .project-list {
+    grid-auto-rows: 1fr;
+  }
+}
 
 .project {
   display: grid;
@@ -495,7 +503,8 @@ h1, h2, h3 {
 /* Each project is one row across the full width: the thumbnail on the left, and
    the title with a short intro under it on the right. The title is a button, and
    its ::after layer covers the whole row, so a click anywhere on the row opens
-   the project's popup. */
+   the project's popup. A row whose title is plain text has no popup, and it
+   does not react to clicks or hovering. */
 .project-row {
   position: relative;
   display: grid;
@@ -524,14 +533,23 @@ h1, h2, h3 {
   grid-row: 1;
 }
 
+/* Every thumbnail gets the same box. A figure shows whole inside the box, on
+   white, so none of its labels are cut off. */
 .project-thumb {
   grid-column: 1;
   grid-row: 1;
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #ffffff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
+}
+/* A photo or illustration fills the whole box instead, with its edges trimmed a little. */
+.project-thumb--fill {
+  object-fit: cover;
 }
 
 .project-row h3 {
@@ -575,7 +593,8 @@ h1, h2, h3 {
 }
 
 @media (hover: hover) {
-  .project-row:hover {
+  /* Only rows with a popup react to the mouse. */
+  .project-row:has(.project-open):hover {
     background: var(--surface);
     box-shadow: var(--shadow);
   }
