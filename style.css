@@ -346,8 +346,17 @@ h1, h2, h3 {
   max-width: var(--reading-width);
 }
 
-/* Uses the full column, so cards line up with the right edge of the intro photo. */
-.section-body--wide {
+/* A section with its label above the content instead of beside it, so the
+   content can use the full page width. */
+.section--stacked {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.5rem;
+}
+.section--stacked .section-label {
+  position: static;
+}
+.section--stacked .section-body {
+  grid-column: 1;
   max-width: none;
 }
 
@@ -483,20 +492,30 @@ h1, h2, h3 {
   font-size: 0.875rem;
 }
 
-/* A project card has a thumbnail on the left and the title and summary on the
-   right. The title is a button, and its ::after layer covers the whole card, so
-   a click anywhere on the card opens the project's popup. */
-.project-card {
+/* Each project is one row across the full width: the thumbnail on the left, and
+   the title with a short intro under it on the right. The title is a button, and
+   its ::after layer covers the whole row, so a click anywhere on the row opens
+   the project's popup. */
+.project-row {
   position: relative;
   display: grid;
-  grid-template-columns: 36% minmax(0, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: minmax(0, 32%) minmax(0, 1fr);
+  gap: 1.75rem;
   align-items: start;
+  margin-inline: -1rem;  /* the hover background reaches a little past the content */
   padding: 1rem;
-  border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--surface);
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* A thin line between rows. It sits in the gap, so the hover background never covers it. */
+.project-row + .project-row::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  right: 1rem;
+  border-top: 1px solid var(--line);
 }
 
 /* The text comes first in the page source for screen readers, but shows on the right. */
@@ -512,20 +531,23 @@ h1, h2, h3 {
   width: 100%;
   height: auto;
   border: 1px solid var(--line);
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: var(--radius);
 }
 
-.project-card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.35;
+.project-row h3 {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.25;
   letter-spacing: -0.01em;
 }
 
-.project-card p {
+.project-row p {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--muted);
 }
 
 .project-open {
@@ -553,23 +575,27 @@ h1, h2, h3 {
 }
 
 @media (hover: hover) {
-  .project-card:hover {
-    border-color: var(--line-strong);
+  .project-row:hover {
+    background: var(--surface);
     box-shadow: var(--shadow);
   }
-  .project-card:hover .project-open {
+  .project-row:hover .project-open {
     color: var(--accent);
   }
 }
 
-@media (max-width: 520px) {
-  .project-card {
+/* On phones the thumbnail goes above the title. */
+@media (max-width: 640px) {
+  .project-row {
     grid-template-columns: minmax(0, 1fr);
-    gap: 1rem;
+    gap: 0.9rem;
   }
   .project-text {
     grid-column: 1;
     grid-row: 2;
+  }
+  .project-row h3 {
+    font-size: 1.3rem;
   }
 }
 
