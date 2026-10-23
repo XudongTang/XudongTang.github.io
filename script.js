@@ -65,4 +65,47 @@
     }, { rootMargin: "-35% 0px -55% 0px", threshold: 0 });
     sections.forEach(function (s) { observer.observe(s); });
   }
+
+  /* ---------- Project popups ---------- */
+  // A button with data-dialog="some-id" opens the <dialog id="some-id">. The popup
+  // closes with its close button, the Escape key, or a click outside of it.
+  function isOutside(dialog, event) {
+    var box = dialog.getBoundingClientRect();
+    return event.clientX < box.left || event.clientX > box.right ||
+      event.clientY < box.top || event.clientY > box.bottom;
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll("dialog"), function (dialog) {
+    if (typeof dialog.showModal !== "function") return;
+
+    var closeButton = dialog.querySelector("[data-close]");
+    if (closeButton) {
+      closeButton.addEventListener("click", function () { dialog.close(); });
+    }
+
+    // Close only when the press starts and ends outside the popup, so that
+    // selecting text inside it and letting go outside does not close it.
+    var pressedOutside = false;
+    dialog.addEventListener("pointerdown", function (event) {
+      pressedOutside = event.target === dialog && isOutside(dialog, event);
+    });
+    dialog.addEventListener("click", function (event) {
+      if (pressedOutside && event.target === dialog && isOutside(dialog, event)) {
+        dialog.close();
+      }
+      pressedOutside = false;
+    });
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-dialog]"), function (button) {
+    var dialog = document.getElementById(button.getAttribute("data-dialog"));
+    if (!dialog || typeof dialog.showModal !== "function") return;
+    button.addEventListener("click", function () {
+      dialog.showModal();
+      dialog.scrollTop = 0;
+      // Focus the popup itself rather than its close button, so the Space and
+      // arrow keys scroll the popup instead of pressing the button.
+      dialog.focus({ preventScroll: true });
+    });
+  });
 })();

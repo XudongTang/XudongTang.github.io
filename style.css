@@ -346,6 +346,11 @@ h1, h2, h3 {
   max-width: var(--reading-width);
 }
 
+/* Uses the full column, so cards line up with the right edge of the intro photo. */
+.section-body--wide {
+  max-width: none;
+}
+
 @media (max-width: 720px) {
   .section {
     grid-template-columns: 1fr;
@@ -393,6 +398,8 @@ h1, h2, h3 {
 
 /* ---------- Projects ---------- */
 .project-list {
+  display: grid;
+  gap: 1rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -474,6 +481,237 @@ h1, h2, h3 {
   gap: 0.35rem 1.25rem;
   font-family: var(--font-mono);
   font-size: 0.875rem;
+}
+
+/* A project card has a thumbnail on the left and the title and summary on the
+   right. The title is a button, and its ::after layer covers the whole card, so
+   a click anywhere on the card opens the project's popup. */
+.project-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36% minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* The text comes first in the page source for screen readers, but shows on the right. */
+.project-text {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.project-thumb {
+  grid-column: 1;
+  grid-row: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) - 2px);
+}
+
+.project-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.project-card p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.project-open {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.project-open::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+.project-open:focus-visible {
+  outline: none;
+}
+.project-open:focus-visible::after {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .project-card:hover {
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow);
+  }
+  .project-card:hover .project-open {
+    color: var(--accent);
+  }
+}
+
+@media (max-width: 520px) {
+  .project-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+  .project-text {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+/* ---------- Project details popup ---------- */
+/* The popup scrolls on its own when it is taller than the window. */
+.project-dialog {
+  width: min(54rem, calc(100% - 2rem));
+  max-width: none;
+  max-height: calc(100vh - 2rem);
+  max-height: calc(100dvh - 2rem);
+  padding: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.45);
+}
+.project-dialog:focus-visible {
+  outline: none;
+}
+.project-dialog[open] {
+  animation: dialog-in 0.2s ease-out;
+}
+.project-dialog::backdrop {
+  background: rgba(15, 19, 22, 0.6);
+}
+.project-dialog[open]::backdrop {
+  animation: fade-in 0.2s ease-out;
+}
+
+/* This bar has no height and sticks to the top, so the close button stays in view while the popup scrolls. */
+.dialog-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  height: 0;
+}
+
+.dialog-close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0.85rem 0.85rem 0 0;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+}
+.dialog-close:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.dialog-close svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.dialog-body {
+  padding: 2.25rem 2.5rem 2.5rem;
+}
+.dialog-body h2 {
+  max-width: 42rem;
+  margin: 0 2.5rem 1.25rem 0;  /* leaves room for the close button */
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.dialog-body p {
+  max-width: 42rem;
+  margin: 0 0 1rem;
+}
+.dialog-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* The plot has a white background, so it sits on a white panel in both themes. */
+.dialog-figure {
+  margin: 1.5rem 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #ffffff;
+}
+.dialog-figure a {
+  display: block;
+  cursor: zoom-in;
+}
+.dialog-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Keeps the page behind an open popup from scrolling. */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* On phones the close button sits in a solid bar, so it never covers the text. */
+@media (max-width: 640px) {
+  .project-dialog {
+    width: calc(100% - 1rem);
+    max-height: calc(100vh - 1rem);
+    max-height: calc(100dvh - 1rem);
+  }
+  .dialog-bar {
+    height: auto;
+    padding: 0.5rem;
+    background: var(--surface);
+    box-shadow: 0 1px 0 var(--line);
+  }
+  .dialog-close {
+    margin: 0;
+  }
+  .dialog-body {
+    padding: 1rem 1.25rem 1.75rem;
+  }
+  .dialog-body h2 {
+    margin-right: 0;
+  }
 }
 
 /* ---------- Experience ---------- */

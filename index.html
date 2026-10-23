@@ -64,8 +64,64 @@
 
     <!-- ============ Projects ============ -->
     <section class="section" id="projects">
-      <h2 class="section-label">Projects</h2>
-      <div class="section-body">
+      <h2 class="section-label">Ongoing projects</h2>
+      <div class="section-body section-body--wide">
+        <ul class="project-list">
+
+          <!-- A click anywhere on the card opens the popup with the matching id below. -->
+          <li class="project-card">
+            <div class="project-text">
+              <h3>
+                <button class="project-open" type="button" data-dialog="voice-similarity" aria-haspopup="dialog">Human and Machine Perception of Voice Similarity in Authentic Speech and Voice Clones</button>
+              </h3>
+              <p>
+                What makes a voice an identity signal? We ran a large-scale behavioral
+                experiment on how people perceive identity similarity between voices,
+                both real and synthetic. Our stimuli are recordings of English-speaking
+                public figures from a wide range of linguistic backgrounds.
+              </p>
+            </div>
+            <img class="project-thumb" src="assets/voice-similarity/figure1_thumbnail.png" alt="Screenshot of the listening task. Listeners hear a reference and a comparison recording, then choose same or different speaker and who the first speaker is. The study has 1,290 participants and 124,876 responses." width="960" height="601">
+          </li>
+
+        </ul>
+
+        <!-- Popup with the project details. It opens from the card above. -->
+        <dialog class="project-dialog" id="voice-similarity" aria-labelledby="voice-similarity-title" tabindex="-1">
+          <div class="dialog-bar">
+            <button class="dialog-close" type="button" data-close aria-label="Close">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+          </div>
+          <div class="dialog-body">
+            <h2 id="voice-similarity-title">Human and Machine Perception of Voice Similarity in Authentic Speech and Voice Clones</h2>
+            <p>
+              Voice has been treated as a signature for identity. We can often recognize
+              a speaker instantly and effortlessly in a crowded room or over a crackling
+              phone line before understanding a single word. However, while human
+              perception can uncover speaker identity reliably under favorable conditions
+              like long, clear samples of familiar voices, it breaks down quickly under
+              realistic degradations such as short samples, disguise, different languages,
+              delays, and stress. These observations motivate an open question: What
+              makes voice an identity signal?
+            </p>
+            <p>
+              We ran a large-scale online behavioral experiment to answer this question.
+              We found that listeners often heard two recordings of the same person as
+              two different people, and that they were more accurate when they were
+              familiar with the speaker. Acoustically, two voices sounded less like the
+              same person when they differed in average pitch, timbre, or the amount of
+              noise in the voice. Listeners weighed these three differences more heavily
+              than automatic speaker verification systems did.
+            </p>
+            <figure class="dialog-figure">
+              <a href="assets/voice-similarity/feature_groups.svg" target="_blank" rel="noopener" title="Open the full-size figure in a new tab">
+                <img src="assets/voice-similarity/feature_groups.svg" alt="Plot of the change in perceived sameness, in percentage points per standard deviation of mismatch, for single acoustic measures (left) and families of measures (right). Timbre (MFCC, −3.7), pitch (−2.2), and harmonics-to-noise ratio (−1.9) have the largest negative effects." width="735" height="363" loading="lazy">
+              </a>
+            </figure>
+            <p>The manuscript is in preparation. Stay tuned for the full results.</p>
+          </div>
+        </dialog>
       </div>
     </section>
 
