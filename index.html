@@ -86,9 +86,29 @@
             <img class="project-thumb" src="assets/voice-similarity/figure1_thumbnail.png" alt="Screenshot of the listening task. Listeners hear a reference and a comparison recording, then choose same or different speaker and who the first speaker is. The study has 1,290 participants and 124,876 responses." width="960" height="601">
           </li>
 
+          <li class="project-row">
+            <div class="project-text">
+              <h3>
+                <button class="project-open" type="button" data-dialog="vipbench" aria-haspopup="dialog">VIPBench: A Human-Aligned Benchmark for Voice Identity Perception in the Age of Voice Cloning</button>
+              </h3>
+              <p>
+                Automatic speaker verification (ASV) systems have become highly accurate
+                over the past decade and are now used in high-stakes settings like banking
+                security. But who actually produced a recording (its metadata identity) is
+                not the same as who listeners think they are hearing (its perceived
+                identity). With generative AI, perceived identity matters more than ever,
+                because synthetic voices often have no clear metadata identity at all. We
+                introduce VIPBench, a voice identity benchmark built on human perception,
+                and use it to test how well 11 popular speaker representation models (the
+                backbone of ASV systems) align with human judgments.
+              </p>
+            </div>
+            <img class="project-thumb" src="assets/vipbench/p2_thumbnail.png" alt="Bar chart of the share of listener responses that went against the metadata label: 0.10 for the same recording, 0.31 for the same speaker in different recordings, 0.41 for the same speaker and a voice clone, 0.26 for different real speakers, and 0.27 for different speakers with a voice clone." width="960" height="824">
+          </li>
+
         </ul>
 
-        <!-- Popup with the project details. It opens from the card above. -->
+        <!-- Popup for the first project. The row whose data-dialog matches this id opens it. -->
         <dialog class="project-dialog" id="voice-similarity" aria-labelledby="voice-similarity-title" tabindex="-1">
           <div class="dialog-bar">
             <button class="dialog-close" type="button" data-close aria-label="Close">
@@ -122,6 +142,61 @@
               </a>
             </figure>
             <p>The manuscript is in preparation. Stay tuned for the full results.</p>
+          </div>
+        </dialog>
+
+        <!-- Popup for the second project (VIPBench). -->
+        <dialog class="project-dialog" id="vipbench" aria-labelledby="vipbench-title" tabindex="-1">
+          <div class="dialog-bar">
+            <button class="dialog-close" type="button" data-close aria-label="Close">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+          </div>
+          <div class="dialog-body">
+            <h2 id="vipbench-title">VIPBench: A Human-Aligned Benchmark for Voice Identity Perception in the Age of Voice Cloning</h2>
+            <p>
+              Automatic speaker verification (ASV) systems have become highly accurate
+              over the past decade and are now used in high-stakes settings like banking
+              security. ASV systems are usually trained and tested on speaker labels from
+              the recording metadata. But who actually produced a recording (its metadata
+              identity) is not the same as who listeners think they are hearing (its
+              perceived identity). For example, listeners sometimes hear two recordings of
+              the same person as two different people. With generative AI, it's more
+              important to measure perceived identity, because the metadata identity of a
+              synthetic voice can be misleading or missing. A voice clone has the metadata
+              identity of its source speaker, even when listeners hear the clone as someone
+              else. A morph that mixes the voices of two speakers has no single metadata
+              identity at all.
+            </p>
+            <figure class="dialog-figure">
+              <a href="assets/vipbench/p2a.png" target="_blank" rel="noopener" title="Open the full-size figure in a new tab">
+                <img src="assets/vipbench/p2a.png" alt="Table comparing VIPBench with 15 other benchmarks by domain, number of speakers, number of stimuli, human judgments, number of participants, AI-generated speech, morphs, and target. Among the voice benchmarks that target identity perception, VIPBench has the most speakers (100), stimuli (9,800), human judgments (124,876), and participants (1,290), and it includes both AI-generated speech and morphs." width="2034" height="805" loading="lazy">
+              </a>
+            </figure>
+            <p>
+              We introduce VIPBench, a voice identity benchmark built on human perception,
+              and use it to test how well 11 popular speaker representation models align
+              with human judgments. In the first two of our four tasks, we measure how well
+              a model's similarity score predicts the benchmark target and the majority
+              answer. In the other two, we measure whether a model and listeners find the
+              same speaker pairs similar, and whether the relation between a model's scores
+              and listener judgments is the same for real and synthetic recordings.
+            </p>
+            <p>
+              We found that listener judgments often differ from metadata identity. None of
+              the 11 models is at the noise ceiling, which is the highest score a model can
+              get given the random variation among listeners. Supervised speaker models
+              align with listeners better than self-supervised models, and self-supervised
+              models align best at their earliest layers. The three types of models are in
+              the same order for accuracy on speaker labels and for alignment with
+              listeners, but the order within each type differs. For example, resemblyzer
+              has a 12% error rate on speaker labels, and it aligns with listeners as well
+              as the four supervised models with error rates below 2%. With VIPBench,
+              researchers can test speaker models against human perception on real,
+              cloned, and morphed speech, and our results motivate training speaker models
+              directly on listener judgments.
+            </p>
+            <p>The manuscript is accepted at NeurIPS 2026 Evaluations &amp; Datasets Track, link coming soon.</p>
           </div>
         </dialog>
       </div>
