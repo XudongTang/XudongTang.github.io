@@ -600,9 +600,10 @@ h1, h2, h3 {
 }
 
 /* ---------- Project details popup ---------- */
-/* The popup scrolls on its own when it is taller than the window. */
+/* The popup scrolls on its own when it is taller than the window. The title,
+   text, and figure inside all share one width, which the popup width sets. */
 .project-dialog {
-  width: min(54rem, calc(100% - 2rem));
+  width: min(48rem, calc(100% - 2rem));
   max-width: none;
   max-height: calc(100vh - 2rem);
   max-height: calc(100dvh - 2rem);
@@ -665,7 +666,6 @@ h1, h2, h3 {
   padding: 2.25rem 2.5rem 2.5rem;
 }
 .dialog-body h2 {
-  max-width: 42rem;
   margin: 0 2.5rem 1.25rem 0;  /* leaves room for the close button */
   font-family: var(--font-serif);
   font-weight: 500;
@@ -674,7 +674,6 @@ h1, h2, h3 {
   letter-spacing: -0.01em;
 }
 .dialog-body p {
-  max-width: 42rem;
   margin: 0 0 1rem;
 }
 .dialog-body p:last-child {
